@@ -34,7 +34,7 @@ jobs:
 
     - name: Run tests with pytest
       run: |
-        uv run pytest tests/ --cov={{ project_name }} --cov-report=term-missing
+        uv run pytest tests/ --cov="{{ project_slug }}" --cov-report=term-missing
 
     {% raw %}
     - name: Upload coverage reports
