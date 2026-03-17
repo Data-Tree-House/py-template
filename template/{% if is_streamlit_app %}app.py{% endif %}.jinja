@@ -1,0 +1,21 @@
+# ~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~
+#
+# Author: {{ project_author }}
+#
+# ~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~
+
+
+import streamlit as st
+from utils.umami import load_umami
+
+load_umami()
+
+
+st.set_page_config(
+    page_title=f"{{ project_name }}",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
+
+st.title(f"Welcome to {{ project_name }}")

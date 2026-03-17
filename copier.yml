@@ -1,0 +1,62 @@
+# ========== // PROJECT BASICS // ==========
+
+project_name:
+  type: str
+  help: What is the name of the project?
+
+project_description:
+  type: str
+  help: How would you describe this project? What is a one-liner to describe it?
+
+project_author:
+  type: str
+  help: Who is the primary author of this project?
+
+# ========== // Python installs // ==========
+
+is_streamlit_app:
+  type: bool
+  help: Is this project a Streamlit app?
+  default: false
+
+library_installs:
+  type: str
+  help: What libraries would you like to have installed?
+  default: ["loguru"]
+  multiselect: true
+  choices:
+    - "pydantic"
+    - "pydantic-settings"
+    - "requests"
+    - "cachetools"
+    - "loguru"
+    - "SQLAlchemy"
+    - "openpyxl"
+    - "boto3"
+    - "python-dotenv"
+
+include_pytests:
+  type: bool
+  help: Include pytest setup and GitHub Actions CI/CD?
+  default: true
+
+pytest_plugins:
+  type: str
+  help: Additional pytest plugins?
+  default: []
+  multiselect: true
+  when: "{{ include_pytests }}"
+  choices:
+    - "pytest-mock"
+    - "pytest-asyncio"
+    - "faker"
+    - "pytest-benchmark"
+
+# ========== // SETTINGS // ==========
+
+_subdirectory: "template"
+
+_message_after_copy: |
+  Your project "{{ project_name }}" has been created successfully!
+
+  If you ever want to update the template, run `copier update`

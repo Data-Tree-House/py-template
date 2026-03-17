@@ -1,0 +1,42 @@
+[project]
+name = "{{ project_name }}"
+version = "0.1.0"
+description = "{{ project_description }}"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    {%- if is_streamlit_app %}
+    "streamlit>=1.52.*,<2.0.0",
+    {%- endif %}
+    {%- if "pydantic" in library_installs %}
+    "pydantic>=2.12.*, <3.0.0",
+    {%- endif %}
+    {%- if "pydantic-settings" in library_installs %}
+    "pydantic-settings>=2.12.*, <3.0.0",
+    {%- endif %}
+    {%- if "requests" in library_installs %}
+    "requests>=2.32.5, <3.0.0",
+    {%- endif %}
+    {%- if "python-dotenv" in library_installs %}
+    "python-dotenv>=1.2.2, <2.0.0",
+    {%- endif %}
+    {%- if "cachetools" in library_installs %}
+    "cachetools>=6.2.*, <7.0.0",
+    {%- endif %}
+]
+
+# uv sync --dev
+[dependency-groups]
+{%- if include_pytests %}
+test = [
+    "pytest",
+    "pytest-cov",
+    {%- for lib in pytest_plugins %}
+    "{{ lib }}",
+    {%- endfor %}
+    "pytest-pretty"
+]
+dev = [{ include-group = "test" }]
+{%- else %}
+dev = []
+{%- endif %}
