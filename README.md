@@ -23,7 +23,7 @@ If you're having some problems installing, you can read more about the installat
 In a terminal of choice (I'm just using Windows CMD), run the following command (I'll break it down below)
 
 ```bash
-python -m copier copy gh:/coderaanalytics-projects/blog-template path/to/destination/folder
+python -m copier copy gh:/data-tree-house/py-template path/to/destination/folder
 ```
 
 A breakdown of what we're doing:
