@@ -27,6 +27,7 @@ dependencies = [
 
 # uv sync --dev
 [dependency-groups]
+lint = ["pre-commit"]
 {%- if include_pytests %}
 test = [
     "pytest",
@@ -36,7 +37,7 @@ test = [
     {%- endfor %}
     "pytest-pretty"
 ]
-dev = [{ include-group = "test" }]
+dev = [{ include-group = "test" }, { include-group = "lint" }]
 {%- else %}
-dev = []
+dev = [{ include-group = "lint" }]
 {%- endif %}
