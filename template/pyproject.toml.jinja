@@ -6,10 +6,10 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     {%- if is_streamlit_app %}
-    "streamlit>=1.52.*,<2.0.0",
+    "streamlit>=1.52.0,<2.0.0",
     {%- endif %}
     {%- if "pydantic" in library_installs %}
-    "pydantic>=2.12.*,<3.0.0",
+    "pydantic>=2.12.0,<3.0.0",
     {%- endif %}
     {%- if "pydantic-settings" in library_installs %}
     "pydantic-settings>=2.12.0,<3.0.0",
@@ -23,6 +23,7 @@ dependencies = [
     {%- if "cachetools" in library_installs %}
     "cachetools>=6.2.*,<7.0.0",
     {%- endif %}
+    loguru
 ]
 
 # uv sync --dev

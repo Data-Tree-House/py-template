@@ -27,14 +27,13 @@ is_streamlit_app:
 library_installs:
   type: str
   help: What libraries would you like to have installed?
-  default: ["loguru"]
+  default: []
   multiselect: true
   choices:
     - "pydantic"
     - "pydantic-settings"
     - "requests"
     - "cachetools"
-    - "loguru"
     - "SQLAlchemy"
     - "openpyxl"
     - "boto3"
