@@ -21,9 +21,9 @@ dependencies = [
     "python-dotenv>=1.2.2,<2.0.0",
     {%- endif %}
     {%- if "cachetools" in library_installs %}
-    "cachetools>=6.2.*,<7.0.0",
+    "cachetools>=6.2.0,<7.0.0",
     {%- endif %}
-    loguru
+    "loguru"
 ]
 
 # uv sync --dev
