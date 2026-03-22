@@ -46,3 +46,9 @@ python -m copier copy gh:/data-tree-house/py-template coffee-analysis
 and it will create a folder called `coffee-analysis` for me!
 
 After you run this command, a series of questions will be asked. You can have a look at all the questions in the [copier.yml](./copier.yml) file.
+
+---
+
+Made with ❤ by Johandielangman
+
+[![Buy us a coffee](https://img.shields.io/badge/SnapScan-buy%20us%20a%20coffee%20☕-407cc5?style=flat-square)](https://pos.snapscan.io/qr/Ew6rBAsV)

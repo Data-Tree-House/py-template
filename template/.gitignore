@@ -23,7 +23,6 @@ full_describe.json
 
 # Gitkeep
 !.gitkeep
-secrets.toml
 
 # MkDocs
 site/
