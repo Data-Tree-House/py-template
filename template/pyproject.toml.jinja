@@ -7,6 +7,7 @@ requires-python = ">=3.12"
 dependencies = [
     {%- if is_streamlit_app %}
     "streamlit>=1.52.0,<2.0.0",
+    "Authlib>=1.6.9,<2.0.0",
     {%- endif %}
     {%- if "pydantic" in library_installs %}
     "pydantic>=2.12.0,<3.0.0",
